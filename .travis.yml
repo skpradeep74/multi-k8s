@@ -15,12 +15,12 @@ after_success:
     - docker build -t skpradeep/multi-server ./server
 
 # login in to docker cli
-#- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #Push these files to docker hub
-#- docker push skpradeep/multi-client
-#- docker push skpradeep/multi-nginx 
-#- docker push skpradeep/multi-worker
-#- docker push skpradeep/multi-server
+    - docker push skpradeep/multi-client
+    - docker push skpradeep/multi-nginx 
+    - docker push skpradeep/multi-worker
+    - docker push skpradeep/multi-server
 
 
 
