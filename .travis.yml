@@ -22,5 +22,18 @@ after_success:
     - docker push skpradeep/multi-worker
     - docker push skpradeep/multi-server
 
+#deploy files
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: ap-south-1
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-ap-south-1-859068528463
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
 
 
